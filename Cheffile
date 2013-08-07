@@ -1,0 +1,22 @@
+site "http://community.opscode.com/api/v1"
+
+cookbook 'apt', '1.7.0'
+cookbook 'build-essential'
+cookbook 'xml'
+cookbook 'zlib'
+cookbook 'openssh'
+
+cookbook 'zsh'
+cookbook 'git'
+
+cookbook 'java'
+
+cookbook 'database'
+cookbook 'sqlite'
+cookbook 'mysql'
+cookbook 'postgresql'
+
+cookbook 'ruby_build'
+cookbook 'rbenv',
+  git: 'git://github.com/fnichol/chef-rbenv.git',
+  ref: 'v0.7.2'
