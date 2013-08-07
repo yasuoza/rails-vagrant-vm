@@ -9,7 +9,7 @@ Installation
 Clone this repo and install chef's necessary packages:
 
 ```
-git clone
+git clone https://github.com/yasuoza/rails-vagrant-vm.git
 bundle install
 bundle exec librarian-chef install
 ```
