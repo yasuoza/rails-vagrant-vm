@@ -1,3 +1,8 @@
+# You can ask for more memory and cores when creating your Vagrant machine:
+# RAILS_VAGRANT_MEMORY=1536 RAILS_VAGRANT_CORES=4 vagrant up
+MEMORY = ENV['RAILS_VAGRANT_MEMORY'] || '512'
+CORES = ENV['RAILS_VAGRANT_CORES'] || '2'
+
 Vagrant.configure("2") do |config|
 
   config.vm.box = "precise32"
@@ -59,5 +64,10 @@ Vagrant.configure("2") do |config|
       recipe[java]
       recipe[rails::vagrant]
     }
+  end
+
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["modifyvm", :id, "--memory", MEMORY.to_i]
+    v.customize ["modifyvm", :id, "--cpus", CORES.to_i]
   end
 end
